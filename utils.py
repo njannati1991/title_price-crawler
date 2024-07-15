@@ -4,8 +4,13 @@ BASALAM = "https://basalam.com/s?q="
 
 TOROB_TITLE_CLASS = "jsx-9e6201846c11ef54 product-name"
 TOROB_PRICE_CLASS = "jsx-9e6201846c11ef54 product-price-text"
+TOROB_TITLE_TAG = 'h2'
+TOROB_PRICE_TAG = 'div'
 
-BASALAM_CLASS_NAME = "_KeJul _0UvDlh _1n_6H7"
+BASALAM_TITLE_CLASS = "_5PwYIn Sh2LgL"
+BASALAM_PRICE_CLASS = "_oC9ho"
+BASALAM_TITLE_TAG = 'a'
+BASALAM_PRICE_TAG = 'span'
 
 
 

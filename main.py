@@ -1,11 +1,28 @@
 from crawler import LinksCrawler
+from utils import *
 
 
 if __name__ == "__main__":
 
     ancher_text = 'laptop'
-    link_crawl = LinksCrawler(ancher_text)
-    data = link_crawl.find_data()
-    print(len(data[0]))
-    print(len(data[1]))
+    target = int(input('Please choice "Target" : 1.Torob, 2.Basalam: '))
 
+    if target == 1:
+        target_name = 'Torob.com'
+        crawler = LinksCrawler(ancher_text)
+        html_doc = crawler.get_page_source(TOROB)
+        data = crawler.find_data(html_doc, TOROB_TITLE_CLASS, TOROB_PRICE_CLASS, TOROB_TITLE_TAG, TOROB_PRICE_TAG)
+
+        for title, price in zip(data[0], data[1]):
+            print(f"Title: {title.text}\t", f"Price: {price.text}")
+
+    if target == 2:
+        target_name = 'Basalam.com'
+        crawler = LinksCrawler(ancher_text)
+        html_doc = crawler.get_page_source(BASALAM)
+        data = crawler.find_data(
+            html_doc, BASALAM_TITLE_CLASS, BASALAM_PRICE_CLASS, BASALAM_TITLE_TAG, BASALAM_PRICE_TAG
+        )
+
+        for title, price in zip(data[0], data[1]):
+            print(title.text, price.text)
